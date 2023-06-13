@@ -3,6 +3,7 @@ package com.quizapi.quizapi;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 @RestController
+@RequestMapping("api/")
 public class QuizController {
     Path jsonFilePath = Path.of("src/main/resources/Questions.json");
     String json = Files.readString(jsonFilePath, StandardCharsets.UTF_8);

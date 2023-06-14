@@ -36,21 +36,8 @@ public class QuizController {
         return questions.get(questionIndex);
     }
 
-    @GetMapping("/getAnswer")
-    public String getAnswer() {
-        return "This is an ANSWER";
-    }
-
     @GetMapping("/getAllQuestions")
-    public Question getAllQuestions() throws IOException {
-
-        for (Question question : questions) {
-            System.out.println("Question: " + question.getQuestion());
-            System.out.println("Answers: " + question.getAnswers());
-            System.out.println("Image: " + question.getImage());
-            System.out.println("Correct Index: " + question.getCorrectIndex());
-            System.out.println();
-        }
-        return questions.get(0);
+    public List<Question> getAllQuestions() throws IOException {       
+        return questions;
     }
 }
